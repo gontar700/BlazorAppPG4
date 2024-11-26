@@ -1,0 +1,37 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<div>
+
+    @*  <Input type="text" id="firstName" @bind-Value="person.FirstName" class="form-control" /> *@
+    <input type="text" @bind-value="FirstName" />
+</div>
+<div>
+
+    <input type="text" @bind-value="LastName" />
+</div>
+
+<div>
+    <button @onclick="HandleValidSubmit" class="btn btn-primary">Save</button>
+</div>
+
+<h3>Person Details</h3>
+<p>First Name: @FirstName</p>
+<p>Last Name: @LastName</p>
+
+@code{
+        string FirstName = "John";
+        string LastName = "Doe";
+
+        private void HandleValidSubmit()
+        {
+            // Handle valid form submission
+            Console.WriteLine($"Form submitted! FirstName: {FirstName}, LastName: {LastName}");
+        }
+
+        public void Dispose()
+        {
+            // Cleanup if needed
+        }
+ }
